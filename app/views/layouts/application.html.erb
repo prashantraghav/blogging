@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Blogging</title>
+    <title><%= @title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
     <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', media: 'all' %>
     <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', media: 'all' %>
@@ -10,12 +10,13 @@
 
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <%= favicon_link_tag 'jinalBrand.ico'%>
   </head>
 
   <body>
+    <%= render 'layouts/partials/application/nav' %>
     <%= yield %>
   </body>
 </html>
