@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
   layout 'home'
 
+  before_action :get_profile, :set_title_bar
+
   def index
     @greeting = @profile.greetings
     @who_i_am = @profile.who_i_am

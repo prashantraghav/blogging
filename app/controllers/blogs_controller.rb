@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
 
+  before_action :get_profile, :set_title_bar
+
   def index
     @blogs = Blog.recent
 

@@ -1,8 +1,6 @@
 class ProfilesController < ApplicationController
 
-  skip_before_action :get_profile, :only=>[:new, :create]
-
-  before_action :authenticate_user!
+  before_action :set_title_bar, :authenticate_user!
 
   def new
 
