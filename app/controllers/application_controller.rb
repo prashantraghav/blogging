@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   def set_title_bar
     @title = "Jinal Dedhia"
+    @host = "http://jinaldedhia.com:9999/"
   end
 
   def get_profile

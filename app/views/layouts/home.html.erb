@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <%= render 'layouts/partials/application/head' %>
+    <%= render 'layouts/partials/application/og_meta_tags', :title=>"Welcome to jinaldedhia.com", :url=>@host, :image=>@host+@profile.pic.url, :site_name=>@title, 
+      :desc=>"This is my official Web Portal. I keep posting new and interesting stories here. So keep visiting folks!" %>
   </head>
   <body class="home">
     <%= render 'layouts/partials/application/nav' %>

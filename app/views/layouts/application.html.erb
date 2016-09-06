@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%= render 'layouts/partials/application/head' %>
-  </head>
+<head>
+<%= render 'layouts/partials/application/head' %>
+<% unless @blog.blank? || @blog.try(:new_record?) %>
+  <%= render 'layouts/partials/application/og_meta_tags', :title=>@blog.title, :url=>@host+blog_path(@blog), :image=>@host+@blog.coverpic.url, :site_name=>@title, :desc=>"" %>
+<% end %>
+</head>
   <body>
     <div id="wrapper">
       <%= render 'layouts/partials/application/nav' %>
