@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
 
+  before_action :set_title_bar, :authenticate_user!
+
   def new
     @profile = Profile.new
 
