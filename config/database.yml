@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: blogging_production
-  username: blogging
-  password: <%= ENV['BLOGGING_DATABASE_PASSWORD'] %>
+  database: jinal_blog_production
+  username: jinal_blog
+  password: <%= ENV['JINAL_BLOG_DATABASE_PASSWORD'] %>

@@ -1,6 +1,11 @@
 class ProfilesController < ApplicationController
 
+  skip_before_action :get_profile, :only=>[:new, :create]
+
+  before_action :authenticate_user!
+
   def new
+
     @profile = Profile.new
 
     @page_heading = "Creating profile"
