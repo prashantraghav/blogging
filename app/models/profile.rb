@@ -12,4 +12,9 @@ class Profile < ApplicationRecord
   validates_attachment_content_type :slide3, content_type: /\Aimage\/.*\z/
   validates_attachment_content_type :slide4, content_type: /\Aimage\/.*\z/
   validates_attachment_content_type :slide5, content_type: /\Aimage\/.*\z/
+
+  validates :greetings, :presence=>true
+  validates :who_i_am, :presence=>true
+  validates :footer, :presence=>true
+
 end

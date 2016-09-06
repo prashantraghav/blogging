@@ -3,6 +3,7 @@ class Blog < ApplicationRecord
   validates_attachment_content_type :coverpic, content_type: /\Aimage\/.*\z/
 
   validates :title, :presence=>true, length: { in: 4..200 }
+  validates :body, :presence=>true
 
   def self.recent(number=0)
     result_set = order('id DESC')
