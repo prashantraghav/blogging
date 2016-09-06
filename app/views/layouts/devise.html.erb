@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%= render 'layouts/partials/application/head' %>
+</head>
+<body style="background-color:#7F7E7E">
+<%= render 'layouts/partials/application/nav' %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div style="margin-top:5%">
+        <% if notice %> <p class="notice bg-success"><%= notice %></p><% end %>
+        <% if alert %><p class="alert bg-danger"><%= alert %></p><% end %>
+        <% unless devise_error_messages!.blank? %><div class="alert bg-danger"><%= devise_error_messages! %></div><% end %>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

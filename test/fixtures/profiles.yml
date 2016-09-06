@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  greetings: MyString
+  who_i_am: MyString
+  footer: MyString
+  slide1: 
+  slide2: 
+  slide3: 
+  slide4: 
+  pic: 
+
+two:
+  greetings: MyString
+  who_i_am: MyString
+  footer: MyString
+  slide1: 
+  slide2: 
+  slide3: 
+  slide4: 
+  pic: 

@@ -1,0 +1,40 @@
+<%= render 'blogs/partials/header', btn: {text: 'Edit', url: edit_blog_path(@blog), delete: blog_path(@blog) }%>
+<div class="row">
+  <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+    <div class="blog-cover">
+      <%= image_tag @blog.coverpic.url %>
+      <div class="blog-title">
+        <h3><%= raw @blog.title %></h3>
+      </div>
+      <div class="blog-title-footer">
+        <blockquote class="blockquote">
+          <p><small><%= @blog.updated_at.strftime("%A, %d %b %Y") %></small></p>
+        </blockquote>
+      </div>
+    </div>
+    <div class="lead" id="story" style="margin-top:-10%;padding:2%"><%= raw @blog.body %></div>
+  </div>
+
+  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 blog-sidebar" style="margin-bottom:50%">
+    <% @blogs.each do |blog| %>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog-sidebar-list">
+          <figure>
+            <a href="<%= blog_path(blog) %>" ><%= image_tag blog.coverpic.url , :class=>'img-responsive'%></a>
+            <figcaption>
+              <center><a href="<%= blog_path(blog) %>" class="lead"><%= blog.title %></a></center>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+$imgs = $("#story").find('img')
+$imgs.each(function(){
+    if(!$(this).hasClass('img-responsive'))
+      $(this).addClass('img-responsive') 
+    })
+</script>

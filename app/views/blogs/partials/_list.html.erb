@@ -1,0 +1,19 @@
+<% html_class = (home_page) ? "photostack photostack-start container-fluid blog-list-home" : "photostack photostack-start container-fluid blog-list" %>
+<article>
+  <section class="<%= html_class %>">
+    <% blogs.each do |blog| %>
+      <figure blog-url="<%= blog_path(blog) %>" data-toggle="tooltip" title="<%= blog.title %>">
+          <a href="javascript:void(0)" class="photostack-img"><%= image_tag blog.coverpic.url, width: "240", height: "240" %></a>
+          <figcaption>
+          <h2 class="photostack-title"> <%=  truncate(blog.title, :lenght=>20, :omission => "...") %></h2>
+          </figcaption>
+        </figure>
+      <% end %>
+    <% if home_page %> <div style="margin-top:1%"><%= link_to "See all..", blogs_path,  class: "btn btn-info" %></div>  <% end %>
+  </section>
+</article>
+
+<script>
+  $("html").removeClass("js")
+  $(".photostack > figure ").click(function(){window.location.href = $(this).attr('blog-url')})
+</script>

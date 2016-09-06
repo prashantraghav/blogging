@@ -1,0 +1,8 @@
+<%= render 'blogs/partials/header', btn: {text: 'Create new', url: new_blog_path }%>
+
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <%= render 'blogs/partials/list', blogs: @blogs, home_page: false %>
+  </div>
+</div>
+

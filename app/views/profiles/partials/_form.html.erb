@@ -1,0 +1,89 @@
+<div class="row" style="margin-bottom: 5%">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <%= form_for(@profile, :html=>{:class=>'form-horizontal', multipart: true}) do |form| %>
+      <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label><i class="fa fa-pencil"></i> <strong>Greetings</strong></label>
+      </div>
+      <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12">
+        <%= form.text_field :greetings, :class=>'form-control' %>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:1%">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label><i class="fa fa-edit"></i> <strong>Who I am</strong></label>
+      </div>
+      <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12">
+        <%= form.text_area :who_i_am, :class=>'form-control' %>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:1%">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label><i class="fa fa-commenting"></i> <strong>Footer Message </strong></label>
+      </div>
+      <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12">
+        <%= form.text_field :footer, :class=>'form-control' %>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:1%">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label><i class="fa fa-camera"></i> <strong>Display Picture</strong> <small> Best fit(w:180px * h:180px)</small></label>
+      </div>
+      <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12">
+        <%= form.file_field :pic, :class=>'form-control' %>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:1%">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label><i class="fa fa-camera"></i> <strong>Slide Picture </strong> <small> Best fit(w:1350px * h:460px)</small></label>
+      </div>
+      <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+        <label> Picture1 </label>
+      </div>
+      <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+        <%= form.file_field :slide1, :class=>'form-control' %>
+      </div>
+      <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+        <label> Picture2 </label>
+      </div>
+      <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+        <%= form.file_field :slide2, :class=>'form-control' %>
+      </div>
+      <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+        <label> Picture3 </label>
+      </div>
+      <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+        <%= form.file_field :slide3, :class=>'form-control' %>
+      </div>
+      <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+        <label> Picture4 </label>
+      </div>
+      <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+        <%= form.file_field :slide4, :class=>'form-control' %>
+      </div>
+      <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+        <label> Picture5 </label>
+      </div>
+      <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+        <%= form.file_field :slide5, :class=>'form-control' %>
+      </div>
+    </div>
+
+    <div class="row clearfix form-actions" style="margin-top:1%">
+      <div class="col-md-offset-4 col-md-8">
+        <%= button_tag :type=>:submit, :class=>'btn btn-primary' do %>
+          <i class="fa fa-save"></i> Save
+      <% end %>
+        &nbsp;
+        <%= link_to (@profile.new_record?) ? profiles_path : profile_path(@profile) , :class=>'btn btn-default' do %>
+          <i class="fa fa-undo"></i> Cancel
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
