@@ -47,6 +47,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:greetings, :who_i_am, :footer, :slide1, :slide2, :slide3, :slide4, :slide5, :pic)
+    params.require(:profile).permit(:greetings, :who_i_am, :footer, :footer_author, :slide1, :slide2, :slide3, :slide4, :slide5, :pic)
   end
 end

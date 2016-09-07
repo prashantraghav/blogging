@@ -3,7 +3,9 @@
     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
       <center>
         <figure>
-          <%= image_tag "footer/contactphoto.jpg", class: "img-circle img-thumbnail img-responsive", alt: "Jinal Dedhia", style: "width:80px; height:80px" %>
+           <% if @profile %>
+            <%= image_tag @profile.pic.url, class: "img-circle img-thumbnail img-responsive", alt: "Jinal Dedhia", style: "width:80px; height:80px" %> 
+           <% end %>
           <figcaption></figcaption>
         </figure>
       </center>
@@ -16,3 +18,8 @@
     </div>
   </div>
 </div>
+<script>
+$("img").on("contextmenu",function(){
+    return false;
+    });
+</script>

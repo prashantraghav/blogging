@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   def set_title_bar
     @title = "Jinal Dedhia"
     @host = "http://jinaldedhia.com:9999/"
-    @footer = {blockquote: @profile.try(:footer), blockquote_footer: "Jinal Dedhia"}
+    @footer = {blockquote: @profile.try(:footer), blockquote_footer: @profile.try(:footer_author) || "Jinal Dedhia"}
   end
 
   def get_profile
