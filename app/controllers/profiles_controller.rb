@@ -3,7 +3,6 @@ class ProfilesController < ApplicationController
   before_action :set_title_bar, :authenticate_user!
 
   def new
-
     @profile = Profile.new
 
     @page_heading = "Creating profile"
@@ -17,9 +16,11 @@ class ProfilesController < ApplicationController
       redirect_to root_path
     else
       flash['alert'] = @profile.errors.full_messages
-      render :edit
-    end
 
+      @page_heading = "Creating profile"
+      @page_icon= "fa fa-user"
+      render :new
+    end
   end
 
   def edit

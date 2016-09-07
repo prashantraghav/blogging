@@ -34,7 +34,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><%= link_to edit_user_registration_path do %> <i class="fa fa-eye-slash"></i> Change Password<% end %></li>
-            <li><%= link_to edit_profile_path(Profile.first) do %> <i class="fa fa-user"></i> Change Profile <% end %></li>
+            <% if @profile.present? %><li><%= link_to edit_profile_path(@profile) do %> <i class="fa fa-user"></i> Change Profile <% end %></li> <% end %>
             <li class="divider"></li>
             <li><%= link_to destroy_user_session_path, :method => :delete do %> <i class="fa fa-fw fa-power-off"></i> Log Out <% end %></li>
           </ul>
